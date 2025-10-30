@@ -50,108 +50,155 @@
 
       <style>
             /* chiều cao navbar (desktop & mobile) */
-            :root { --nav-height: 80px; }
-            @media (max-width: 991px) { :root { --nav-height: 60px; } }
-          
+            :root {
+                  --nav-height: 80px;
+            }
+
+            @media (max-width: 991px) {
+                  :root {
+                        --nav-height: 60px;
+                  }
+            }
+
             /* đẩy toàn bộ nội dung xuống dưới navbar */
-            body { padding-top: var(--nav-height); }
-          
+            body {
+                  padding-top: var(--nav-height);
+            }
+
             /* (khuyến nghị) style khối nội dung chi tiết cho đẹp */
-            .product-wrap { background:#fff; border-radius:12px; padding:24px; margin-top:12px; box-shadow:0 6px 24px rgba(0,0,0,.06); }
-            .product-image { width:100%; max-width:420px; width:100%; object-fit:contain; }
-            .product-title { font-weight:700; margin-bottom:8px; }
-            .price { font-weight:700; color:#28a745; }
-            .meta { color:#6c757d; margin-top:8px; line-height:1.8; }
-            .desc { margin-top:14px; color:#495057; }
-            .rating { color:#f1c40f; letter-spacing:2px; font-size:18px; }
-            .btn-group-gap > .btn { margin-right:8px; }
-          </style>
-          
+            .product-wrap {
+                  background: #fff;
+                  border-radius: 12px;
+                  padding: 24px;
+                  margin-top: 12px;
+                  box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+            }
+
+            .product-image {
+                  width: 100%;
+                  max-width: 420px;
+                  width: 100%;
+                  object-fit: contain;
+            }
+
+            .product-title {
+                  font-weight: 700;
+                  margin-bottom: 8px;
+            }
+
+            .price {
+                  font-weight: 700;
+                  color: #28a745;
+            }
+
+            .meta {
+                  color: #6c757d;
+                  margin-top: 8px;
+                  line-height: 1.8;
+            }
+
+            .desc {
+                  margin-top: 14px;
+                  color: #495057;
+            }
+
+            .rating {
+                  color: #f1c40f;
+                  letter-spacing: 2px;
+                  font-size: 18px;
+            }
+
+            .btn-group-gap>.btn {
+                  margin-right: 8px;
+            }
+      </style>
+
 
 </head>
 
 <body>
-      <section id="home" >
+      <section id="home">
             <div class="container mt-5">
-            <!-- top-area Start -->
-            <div class="top-area" >
-                  <div class="header-area">
-                        <!-- Start Navigation -->
-                        <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"
-                              data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000" style="background-color: black;">
+                  <!-- top-area Start -->
+                  <div class="top-area">
+                        <div class="header-area">
+                              <!-- Start Navigation -->
+                              <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"
+                                    data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000"
+                                    style="background-color: black;">
 
-                              <div class="container">
+                                    <div class="container">
 
-                                    <!-- Start Header Navigation -->
-                                    <div class="navbar-header">
-                                          <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                                data-target="#navbar-menu">
-                                                <i class="fa fa-bars"></i>
-                                          </button>
-                                          <a class="navbar-brand" href="index.html">CarHub<span></span></a>
+                                          <!-- Start Header Navigation -->
+                                          <div class="navbar-header">
+                                                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                                      data-target="#navbar-menu">
+                                                      <i class="fa fa-bars"></i>
+                                                </button>
+                                                <a class="navbar-brand" href="index.html">CarHub<span></span></a>
 
-                                    </div><!--/.navbar-header-->
-                                    <!-- End Header Navigation -->
+                                          </div><!--/.navbar-header-->
+                                          <!-- End Header Navigation -->
 
-                                    <!-- Collect the nav links, forms, and other content for toggling -->
-                                    <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-                                          <ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
-                                                data-out="fadeOutUp">
-                                                <li class=" scroll active"><a href="#home">home</a></li>
-                                                <li class="scroll"><a href="#service">service</a></li>
-                                                <li class="scroll"><a href="#featured-cars">featured cars</a></li>
-                                                <li class="scroll"><a href="#new-cars">new cars</a></li>
-                                                <li class="scroll"><a href="#brand">brands</a></li>
-                                                <li class="scroll"><a href="#contact">contact</a></li>
-                                          </ul><!--/.nav -->
-                                    </div><!-- /.navbar-collapse -->
-                              </div><!--/.container-->
-                        </nav><!--/nav-->
-                        <!-- End Navigation -->
-                  </div><!--/.header-area-->
-                  <div class="clearfix"></div>
+                                          <!-- Collect the nav links, forms, and other content for toggling -->
+                                          <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                                                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
+                                                      data-out="fadeOutUp">
+                                                      <li class=" scroll active"><a href="#home">home</a></li>
+                                                      <li class="scroll"><a href="#service">service</a></li>
+                                                      <li class="scroll"><a href="#featured-cars">featured cars</a></li>
+                                                      <li class="scroll"><a href="#new-cars">new cars</a></li>
+                                                      <li class="scroll"><a href="#brand">brands</a></li>
+                                                      <li class="scroll"><a href="#contact">contact</a></li>
+                                                </ul><!--/.nav -->
+                                          </div><!-- /.navbar-collapse -->
+                                    </div><!--/.container-->
+                              </nav><!--/nav-->
+                              <!-- End Navigation -->
+                        </div><!--/.header-area-->
+                        <div class="clearfix"></div>
 
-            </div><!-- /.top-area-->
-            <!-- top-area End -->
-            
-            
+                  </div><!-- /.top-area-->
+                  <!-- top-area End -->
 
-            <div class="product-wrap" style="padding-top: 100px;">
-                  <div class="row align-items-start">
-                    <div class="col-md-5 text-center">
-                      <img id="car-image" alt="Car image" class="product-image" />
-                    </div>
-            
-                    <div class="col-md-7">
-                      <h2 id="car-name" class="product-title">Tên xe</h2>
-                      <div class="price">
-                        Giá: <span id="car-price">—</span>
-                      </div>
-            
-                      <div class="meta">
-                        <b>Năm:</b> <span id="car-year"></span>
-                        &nbsp; <b>Kiểu dáng:</b> <span id="car-style"></span>
-                        &nbsp; <b>Hãng:</b> <span id="car-brand"></span>
-                        &nbsp; <b>Màu:</b> <span id="car-color"></span>
-                      </div>
-            
-                      <div class="mt-2">
-                        Đánh giá: <span id="car-rating" class="rating">★★★★★</span>
-                      </div>
-            
-                      <p id="car-description" class="desc"></p>
-            
-                      <div class="btn-group-gap mt-3">
-                        <button id="btn-edit" class="btn btn-warning">Chỉnh sửa</button>
-                        <button id="btn-delete" class="btn btn-danger">Xóa</button>
-                      </div>
-            
-                      <div class="mt-3">
-                        <a href="/" class="btn btn-secondary">Quay lại danh sách sản phẩm</a>
-                      </div>
-                    </div>
+
+
+                  <div class="product-wrap" style="padding-top: 100px;">
+                        <div class="row align-items-start">
+                              <div class="col-md-5 text-center">
+                                    <img id="car-image" alt="Car image" class="product-image" />
+                              </div>
+
+                              <div class="col-md-7">
+                                    <h2 id="car-name" class="product-title">Tên xe</h2>
+                                    <div class="price">
+                                          Giá: <span id="car-price">—</span>
+                                    </div>
+
+                                    <div class="meta">
+                                          <b>Năm:</b> <span id="car-year"></span>
+                                          &nbsp; <b>Kiểu dáng:</b> <span id="car-style"></span>
+                                          &nbsp; <b>Hãng:</b> <span id="car-brand"></span>
+                                          &nbsp; <b>Màu:</b> <span id="car-color"></span>
+                                    </div>
+
+                                    <div class="mt-2">
+                                          Đánh giá: <span id="car-rating" class="rating">★★★★★</span>
+                                    </div>
+
+                                    <p id="car-description" class="desc"></p>
+
+                                    <div class="btn-group-gap mt-3">
+                                          <button id="btn-edit" class="btn btn-warning">Chỉnh sửa</button>
+                                          <button id="btn-delete" class="btn btn-danger">Xóa</button>
+                                    </div>
+
+                                    <div class="mt-3">
+                                          <a href="/" class="btn btn-secondary">Quay lại danh sách sản phẩm</a>
+                                    </div>
+                              </div>
+                        </div>
                   </div>
-                </div>
             </div>
       </section>
       <script>
@@ -195,6 +242,24 @@
                               console.error(err);
                               alert('Không tải được chi tiết xe.');
                         });
+
+                  // --- Nút XÓA ---
+                  $('btn-delete').onclick = async () => {
+                        if (!confirm('Bạn chắc chắn muốn xóa sản phẩm này?')) return;
+                        try {
+                              const resp = await fetch(`http://localhost:3000/data/cars/${id}`, { method: 'DELETE' });
+                              if (!resp.ok) throw new Error('Xóa không thành công');
+                              alert('Đã xóa.');
+                              location.href = 'index.html';
+                        } catch (e) {
+                              console.error(e); alert('Xóa thất bại. Kiểm tra API backend.');
+                        }
+                  };
+
+                  // --- Nút CHỈNH SỬA ---
+                  $('btn-edit').onclick = () => {
+                        location.href = `edit.html?id=${id}`;
+                  };
             })();
       </script>
 

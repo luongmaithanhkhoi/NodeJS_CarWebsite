@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+      <meta charset="UTF-8">
+      <title>Sửa xe</title>
+      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+      <div class="container mt-4">
+            <h3 class="mb-3">Chỉnh sửa sản phẩm</h3>
+            <form id="edit-form" class="card card-body">
+                  <div class="row g-3">
+                        <div class="col-md-6">
+                              <label class="form-label">Tên xe</label>
+                              <input id="name" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                              <label class="form-label">Năm</label>
+                              <input id="year" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                              <label class="form-label">Giá</label>
+                              <input id="price" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                              <label class="form-label">Hãng</label>
+                              <input id="brand" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                              <label class="form-label">Kiểu dáng</label>
+                              <input id="style" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                              <label class="form-label">Màu</label>
+                              <input id="color" class="form-control">
+                        </div>
+                        <div class="col-12">
+                              <label class="form-label">Ảnh (tên file hoặc URL)</label>
+                              <input id="image" class="form-control" placeholder="fc4.png hoặc https://...">
+                        </div>
+                        <div class="col-12">
+                              <label class="form-label">Mô tả</label>
+                              <textarea id="description" rows="4" class="form-control"></textarea>
+                        </div>
+                  </div>
+                  <div class="mt-3">
+                        <button class="btn btn-primary" type="submit">Lưu thay đổi</button>
+                        <a class="btn btn-secondary" id="btn-back">Hủy</a>
+                  </div>
+            </form>
+      </div>
+
+      <script>
+            (function () {
+                  const qs = new URLSearchParams(location.search);
+                  const id = qs.get('id');
+                  if (!id) { alert('Thiếu id'); history.back(); return; }
+
+                  const $ = (id) => document.getElementById(id);
+
+                  // nạp dữ liệu cũ vào form
+                  fetch(`http://localhost:3000/data/carinf/${id}`, { method: 'POST', headers: { 'Content-Type': 'application/json' } })
+                        .then(r => { if (!r.ok) throw 0; return r.json(); })
+                        .then(c => {
+                              $('name').value = c.name ?? '';
+                              $('year').value = c.year ?? '';
+                              $('price').value = c.price ?? '';
+                              $('brand').value = c.brand ?? '';
+                              $('style').value = c.style ?? '';
+                              $('color').value = c.color ?? '';
+                              $('image').value = c.image ?? c.imageUrl ?? '';
+                              $('description').value = c.description ?? '';
+                        })
+                        .catch(() => alert('Không tải được dữ liệu'));
+
+                  // submit PUT
+                  document.getElementById('edit-form').addEventListener('submit', async (e) => {
+                        e.preventDefault();
+                        const payload = {
+                              name: $('name').value.trim(),
+                              year: $('year').value.trim(),
+                              price: $('price').value.trim(),
+                              brand: $('brand').value.trim(),
+                              style: $('style').value.trim(),
+                              color: $('color').value.trim(),
+                              image: $('image').value.trim(),
+                              description: $('description').value.trim(),
+                        };
+                        try {
+                              const resp = await fetch(`http://localhost:3000/data/cars/${id}`, {
+                                    method: 'PUT',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify(payload)
+                              });
+                              if (!resp.ok) throw 0;
+                              alert('Đã lưu!');
+                              location.href = `detail.html?id=${id}`;
+                        } catch {
+                              alert('Lưu thất bại');
+                        }
+                  });
+
+                  document.getElementById('btn-back').onclick = () => history.back();
+            })();
+      </script>
+</body>
+
+</html>
