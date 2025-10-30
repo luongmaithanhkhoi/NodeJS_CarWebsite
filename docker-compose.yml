@@ -1,0 +1,36 @@
+version: '3.8'
+
+services: 
+  frontend:
+    image: nginx:latest
+    volumes:
+      - ./front-end-olhtml:/usr/share/nginx/html
+    ports:
+      - "5000:80"
+    networks:
+      - midterm-nodejs
+
+  backend:
+    build:
+      context: ./back-end
+    ports:
+      - "3000:3000"
+    networks:
+      - midterm-nodejs
+    depends_on:
+      - database
+
+  database:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - midterm-nodejs
+    volumes:
+      - mongo-data:/data/db
+
+networks:
+  midterm-nodejs:
+
+volumes:
+  mongo-data:
