@@ -17,5 +17,6 @@ ENV PORT=3000
 EXPOSE 3000
 
 # đổi theo script của bạn nếu có "start"
-CMD ["npm","start"]
+# CMD ["npm","start"]
+CMD ["sh", "-c", "node scripts/seed.cars.js && npm start"]
 # hoặc: CMD ["node","server.js"]
