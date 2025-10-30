@@ -6,5 +6,7 @@ const router = express.Router();
 router.get('/allcars', getAllCar);
 router.post('/carinf/:id', getCarById);
 router.get('/cars', getCarFilter);
+// router.delete('/cars/:id', deleteCar);  
+// router.put('/cars/:id', updateCar);     
 
 module.exports = router;
